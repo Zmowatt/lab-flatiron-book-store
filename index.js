@@ -45,3 +45,30 @@ const bookStore = {
 
 // Write your code here!
 
+//Assign title to webpage
+const bookStoreTitle = document.querySelector('#header');
+bookStoreTitle.textContent = bookStore.name;
+
+//Create book elements
+bookStore.books.forEach((book) => {
+    const bookContainer = document.createElement('li');
+    const bookTitle = document.createElement('h3');
+    const bookAuthor = document.createElement('p');
+    const bookImage = document.createElement('img')
+
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = book.author;
+    bookImage.setAttribute('src', book.imageUrl);
+    
+    const itemsToAppend = [bookTitle, bookAuthor, bookImage]
+    
+    itemsToAppend.forEach((item) => {
+        bookContainer.appendChild(item);
+    })
+
+    const bookList = document.querySelector('#book-list');
+
+    bookList.appendChild(bookContainer)
+})
+
+
