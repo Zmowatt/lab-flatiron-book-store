@@ -49,7 +49,7 @@ const bookStore = {
 const bookStoreTitle = document.querySelector('#header');
 bookStoreTitle.textContent = bookStore.name;
 
-//Create book elements
+//Create book elements and add to the webpage
 bookStore.books.forEach((book) => {
     const bookContainer = document.createElement('li');
     const bookTitle = document.createElement('h3');
